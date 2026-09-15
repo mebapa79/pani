@@ -74,8 +74,8 @@ Bearbeite diese Kontaktdaten in `index.html`:
 <p class="navbar__subtitle">Hauswartung • Reinigung • Entsorgung • Gartenarbeiten</p>
 
 <!-- Contact Section -->
-<p>Musterstrasse 123, 8000 Zürich</p>
-<p><a href="tel:+41441234567">+41 44 123 45 67</a></p>
+<p>Musterstrasse 123, 4000 Basel</p>
+<p><a href="tel:+41611234567">+41 61 123 45 67</a></p>
 <p><a href="mailto:info@pani-gmbh.ch">info@pani-gmbh.ch</a></p>
 
 <!-- Impressum -->
@@ -152,7 +152,7 @@ Update diese Meta-Tags in `index.html`:
 Füge weitere Tags hinzu (bei Bedarf):
 ```html
 <meta name="description" content="...">
-<meta name="keywords" content="Hauswartung, Reinigung, Entsorgung, Gartenarbeiten, Zürich">
+<meta name="keywords" content="Hauswartung, Reinigung, Entsorgung, Gartenarbeiten, Basel">
 <meta name="author" content="PaNi gmbh">
 ```
 
