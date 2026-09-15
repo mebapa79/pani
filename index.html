@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaNi gmbh – Hauswartung, Reinigung, Entsorgung & Gartenarbeiten</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <h1>PaNi gmbh</h1>
+                <p class="navbar__subtitle">Hauswartung • Reinigung • Entsorgung • Gartenarbeiten</p>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__content">
+            <h2 class="hero__title">Ihre Immobilie in zuverlässigen Händen</h2>
+            <p class="hero__subtitle">Professionelle Hauswartung, Reinigung, Entsorgung und Gartenarbeiten – alles aus einer Hand</p>
+            <button class="hero__cta" id="heroBtn">Ihre Lösung finden</button>
+        </div>
+        <div class="hero__image">
+            <img src="images/hero.webp" alt="Professioneller Monteur bei der Arbeit">
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz">
+        <div class="quiz__container">
+            <h2 class="quiz__title">Was benötigen Sie?</h2>
+            <p class="quiz__subtitle">Beantworten Sie drei kurze Fragen – wir zeigen Ihnen die perfekte Lösung</p>
+
+            <div class="quiz__wrapper" id="quizWrapper">
+                <!-- Question 1 -->
+                <div class="quiz__question" id="question1">
+                    <h3>1. Welche Bereiche sind relevant für Sie?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-category="hauswartung">
+                            <span class="quiz__option-title">Hauswartung</span>
+                            <span class="quiz__option-desc">Instandhaltung & Reparaturen</span>
+                        </button>
+                        <button class="quiz__option" data-category="reinigung">
+                            <span class="quiz__option-title">Reinigung</span>
+                            <span class="quiz__option-desc">Professionelle Gebäudereinigung</span>
+                        </button>
+                        <button class="quiz__option" data-category="entsorgung">
+                            <span class="quiz__option-title">Entsorgung</span>
+                            <span class="quiz__option-desc">Abfallwirtschaft & Entrümpelung</span>
+                        </button>
+                        <button class="quiz__option" data-category="gartenarbeiten">
+                            <span class="quiz__option-title">Gartenarbeiten</span>
+                            <span class="quiz__option-desc">Grünflächenunterhalt</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz__question hidden" id="question2">
+                    <h3>2. Wie häufig benötigen Sie diesen Service?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-frequency="einmalig">
+                            <span class="quiz__option-title">Einmalig</span>
+                            <span class="quiz__option-desc">Projektbasiert</span>
+                        </button>
+                        <button class="quiz__option" data-frequency="regelmaessig">
+                            <span class="quiz__option-title">Regelmäßig</span>
+                            <span class="quiz__option-desc">Monatlich oder Quartal</span>
+                        </button>
+                        <button class="quiz__option" data-frequency="dauerhaft">
+                            <span class="quiz__option-title">Dauerhaft</span>
+                            <span class="quiz__option-desc">Jahresvertrag</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz__question hidden" id="question3">
+                    <h3>3. Welche Objektgröße?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-size="klein">
+                            <span class="quiz__option-title">Klein</span>
+                            <span class="quiz__option-desc">Bis 500 m²</span>
+                        </button>
+                        <button class="quiz__option" data-size="mittel">
+                            <span class="quiz__option-title">Mittel</span>
+                            <span class="quiz__option-desc">500 - 2000 m²</span>
+                        </button>
+                        <button class="quiz__option" data-size="gross">
+                            <span class="quiz__option-title">Groß</span>
+                            <span class="quiz__option-desc">Über 2000 m²</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="quiz__results hidden" id="quizResults">
+                    <h3>Ihre personalisierte Lösung</h3>
+                    <div class="results__content" id="resultsContent"></div>
+
+                    <form class="quiz__form" id="quizQuoteForm" style="margin-top: var(--spacing-2xl);">
+                        <h4 style="color: var(--color-primary); margin-bottom: var(--spacing-lg); font-size: 1.125rem;">Offerte anfragen</h4>
+                        <div class="form-group">
+                            <label for="quoteName">Name *</label>
+                            <input type="text" id="quoteName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quoteEmail">E-Mail *</label>
+                            <input type="email" id="quoteEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quotePhone">Telefon *</label>
+                            <input type="tel" id="quotePhone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quoteMessage">Nachricht</label>
+                            <textarea id="quoteMessage" name="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="form__submit" style="width: 100%;">Offerte anfordern</button>
+                        <button type="button" class="quiz__reset" id="resetBtn" style="margin-top: var(--spacing-md);">Neu starten</button>
+                        <div id="quizFormStatus" class="form__status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services__container">
+            <h2 class="services__title">Unsere Dienstleistungen</h2>
+
+            <!-- Service 1: Hauswartung -->
+            <div class="service-card">
+                <div class="service-card__image">
+                    <img src="images/service-hauswartung.webp" alt="Hauswartung und Instandhaltung">
+                </div>
+                <div class="service-card__content">
+                    <h3 class="service-card__title">Hauswartung</h3>
+                    <p class="service-card__description">Regelmäßige Wartung, Reparaturen und Instandhaltung Ihrer Immobilie – von Elektrik über Sanitär bis zur Heizung. Wir sorgen dafür, dass alles funktioniert und Ihre Liegenschaft wertbeständig bleibt.</p>
+                    <div class="service-card__pricing">
+                        <div class="price-item">
+                            <span class="price-label">Einfache Reparatur</span>
+                            <span class="price-value">CHF 150–300</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Wartungsvertrag (monatlich)</span>
+                            <span class="price-value">CHF 400–800</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Jahreswartung (umfassend)</span>
+                            <span class="price-value">CHF 2000–5000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Reinigung -->
+            <div class="service-card">
+                <div class="service-card__image">
+                    <img src="images/service-reinigung.webp" alt="Professionelle Gebäudereinigung">
+                </div>
+                <div class="service-card__content">
+                    <h3 class="service-card__title">Reinigung</h3>
+                    <p class="service-card__description">Professionelle Gebäude- und Unterhaltsreinigung mit höchsten Standards. Wir reinigen Ihre Flächen gründlich, zuverlässig und diskret – damit Sie sich auf Wichtigeres konzentrieren können.</p>
+                    <div class="service-card__pricing">
+                        <div class="price-item">
+                            <span class="price-label">Unterhaltsreinigung (monatlich)</span>
+                            <span class="price-value">CHF 500–1200</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Tiefenreinigung (einmalig)</span>
+                            <span class="price-value">CHF 800–2000</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Fassadenreinigung (pro 100 m²)</span>
+                            <span class="price-value">CHF 400–600</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Entsorgung -->
+            <div class="service-card">
+                <div class="service-card__image">
+                    <img src="images/service-entsorgung.webp" alt="Professionelle Entsorgung und Entrümpelung">
+                </div>
+                <div class="service-card__content">
+                    <h3 class="service-card__title">Entsorgung</h3>
+                    <p class="service-card__description">Fachgerechte Abfallwirtschaft, Entrümpelung und Recycling. Wir kümmern uns um die sachgerechte Entsorgung und sorgen für ein sauberes Umfeld – unkompliziert und umweltbewusst.</p>
+                    <div class="service-card__pricing">
+                        <div class="price-item">
+                            <span class="price-label">Abfallwirtschaftsvertrag</span>
+                            <span class="price-value">CHF 60–150/Monat</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Entrümpelung (pro m³)</span>
+                            <span class="price-value">CHF 80–120</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Spezialreinigung nach Entrümpelung</span>
+                            <span class="price-value">CHF 400–1000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Gartenarbeiten -->
+            <div class="service-card">
+                <div class="service-card__image">
+                    <img src="images/service-garten.webp" alt="Professionelle Gartenarbeiten und Grünflächenunterhalt">
+                </div>
+                <div class="service-card__content">
+                    <h3 class="service-card__title">Gartenarbeiten</h3>
+                    <p class="service-card__description">Kompetente Grünflächenunterhalt und Gartenarbeiten für Ihre Liegenschaft. Von Rasenpflege über Heckenschnitt bis zur Baumpflege – Ihre Grünflächen in besten Händen.</p>
+                    <div class="service-card__pricing">
+                        <div class="price-item">
+                            <span class="price-label">Rasenmähen (monatlich)</span>
+                            <span class="price-value">CHF 100–300</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Heckenscnitt & Baumschnitt</span>
+                            <span class="price-value">CHF 150–500/Einsatz</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="price-label">Ganzjahresvertrag (Grünflächenunterhalt)</span>
+                            <span class="price-value">CHF 800–2000/Saison</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about__container">
+            <div class="about__content">
+                <h2 class="about__title">Über PaNi gmbh</h2>
+                <p>Seit über 15 Jahren sind wir der zuverlässige Partner für Immobilien in der Region. Mit einem erfahrenen Team und hohem Qualitätsanspruch kümmern wir uns um alles, was eine Liegenschaft braucht – von der Hauswartung über Reinigung bis zur Gartenarbeit.</p>
+                <p>Wir verstehen, dass eine Immobilie viel Zeit und Aufmerksamkeit braucht. Darum bieten wir umfassende, zuverlässige Dienstleistungen, auf die Sie sich verlassen können – damit Sie sich auf das Wesentliche konzentrieren können.</p>
+                <ul class="about__features">
+                    <li>Professionelle Beratung & flexible Lösungen</li>
+                    <li>Erfahrenes, geschultes Personal</li>
+                    <li>Faire und transparente Preise</li>
+                    <li>Rund um die Uhr erreichbar für Notfälle</li>
+                    <li>Umweltbewusstes und nachhaltiges Arbeiten</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact__container">
+            <div class="contact__info">
+                <h2 class="contact__title">Kontakt</h2>
+                <div class="contact__details">
+                    <div class="contact-item">
+                        <span class="contact-item__label">Adresse</span>
+                        <p>Musterstrasse 123, 8000 Zürich</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item__label">Telefon</span>
+                        <p><a href="tel:+41441234567">+41 44 123 45 67</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item__label">E-Mail</span>
+                        <p><a href="mailto:info@pani-gmbh.ch">info@pani-gmbh.ch</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-item__label">Notfall</span>
+                        <p><a href="tel:+41441234568">+41 44 123 45 68</a> (24/7)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact__form-wrapper">
+                <h3>Nachricht senden</h3>
+                <form class="contact__form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="form__submit">Nachricht senden</button>
+                    <div id="formStatus" class="form__status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impressum Section -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <h3>PaNi gmbh</h3>
+                <p>Hauswartung, Reinigung, Entsorgung & Gartenarbeiten</p>
+            </div>
+            <div class="footer__legal">
+                <a href="#impressum" class="footer__link">Impressum</a>
+                <a href="#datenschutz" class="footer__link">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Impressum Modal -->
+    <div class="modal" id="impressumModal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2>Impressum</h2>
+            <h3>Unternehmensangaben</h3>
+            <p><strong>Firmenname:</strong> PaNi gmbh</p>
+            <p><strong>Branche:</strong> Hauswartung, Reinigung, Entsorgung und Gartenarbeiten</p>
+            <p><strong>Adresse:</strong> Musterstrasse 123, 8000 Zürich</p>
+            <p><strong>Telefon:</strong> +41 44 123 45 67</p>
+            <p><strong>E-Mail:</strong> info@pani-gmbh.ch</p>
+            <p><strong>UID:</strong> CHE-123.456.789</p>
+
+            <h3>Geschäftsführer</h3>
+            <p>Patrick Müller & Nicole Schmid</p>
+
+            <h3>Verantwortlicher für Inhalte</h3>
+            <p>Nicole Schmid, info@pani-gmbh.ch</p>
+
+            <h3>Haftungsausschluss</h3>
+            <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität wird keine Haftung übernommen.</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
